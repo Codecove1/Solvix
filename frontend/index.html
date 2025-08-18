@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-container">
+        <div class="auth-form" id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button id="login-button">Login</button>
+            <p>Don't have an account? <a href="#" id="show-register">Register here</a></p>
+        </div>
+        <div class="auth-form" id="register-form" style="display: none;">
+            <h2>Register</h2>
+            <input type="text" id="register-username" placeholder="Username" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <button id="register-button">Register</button>
+            <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+        </div>
+    </div>
+
+    <div id="main-app-container" style="display: none;">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="user-info">
+                    <h2 id="welcome-message">Welcome!</h2>
+                    <p id="user-status-text">Status: Free User | Questions left: 5</p>
+                </div>
+                <div class="model-selection">
+                    <input type="radio" id="smart-ai" name="model" value="smart" checked>
+                    <label for="smart-ai">Smart AI</label>
+                    <input type="radio" id="study-ai" name="model" value="study">
+                    <label for="study-ai">Study AI</label>
+                    <input type="radio" id="super-ai" name="model" value="super" disabled>
+                    <label for="super-ai" id="super-ai-label">Super AI (Premium)</label>
+                </div>
+                <button id="upgrade-button">Upgrade to Premium</button>
+                <button id="logout-button">Logout</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will be appended here -->
+            </div>
+            <form class="chat-input-form" id="chat-form">
+                <input type="text" id="message-input" placeholder="Type your message...">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
